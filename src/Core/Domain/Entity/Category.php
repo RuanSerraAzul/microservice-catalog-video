@@ -16,4 +16,12 @@ class Category{
     {
 
     }
+
+    public function activate(): void{
+        $this->isActive = true;
+    }
+
+    public function desable(): void{
+        $this->isActive = false;
+    }
 }

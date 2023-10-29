@@ -6,7 +6,7 @@ use Exception;
 
 trait MethodsMagicTrait{
     public function __get($proprerty){
-        if($this->{$proprerty}){
+        if(isset($this->{$proprerty})){
             return $this->{$proprerty};
         }
 
