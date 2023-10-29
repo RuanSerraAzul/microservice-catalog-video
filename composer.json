@@ -1,0 +1,19 @@
+{
+    "name": "ruanserraazul/app-pphp-catalog-video",
+    "description": "App with PHP - Catalog Video",
+    "authors": [
+        {
+            "name": "Ruan Serra Azul",
+            "email": "ruan.4321.pablo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "src/Core/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4",
+        "mockery/mockery": "^1.6"
+    }
+}
