@@ -24,4 +24,9 @@ class Category{
     public function desable(): void{
         $this->isActive = false;
     }
+
+    public function update(string $name, string $description = '') : void{
+        $this->name = $name;
+        $this->description = $description;
+    }
 }
