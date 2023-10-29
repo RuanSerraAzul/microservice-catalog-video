@@ -2,6 +2,7 @@
 
 namespace Core\Domain\Entity;
 use Core\Domain\Entity\Traits\MethodsMagicTrait;
+use Core\Domain\Exception\EntityValidationException;
 
 class Category{
 
@@ -14,6 +15,7 @@ class Category{
         protected string $id = '',
         )
     {
+        $this->validate();
 
     }
 
@@ -28,5 +30,21 @@ class Category{
     public function update(string $name, string $description = '') : void{
         $this->name = $name;
         $this->description = $description;
+
+        $this->validate();
+    }
+
+    public function validate(){ 
+        if(empty($this->name))   {
+            throw new EntityValidationException("Nome inválido");
+        }
+
+        if(strlen ($this->name) > 255 || strlen ($this->name) <= 2)   {
+            throw new EntityValidationException("Descrição inválida");
+        }
+
+        if($this->description != '' &&  (strlen ($this->description) > 255 && strlen ($this->description) <= 2))   {
+            throw new EntityValidationException("Descrição inválida");
+        }
     }
 }
