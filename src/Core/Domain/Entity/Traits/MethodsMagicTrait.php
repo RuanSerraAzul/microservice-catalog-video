@@ -16,4 +16,8 @@ trait MethodsMagicTrait{
 
     } 
 
+    public function id(): string {
+        return (string) $this->id;
     }
+
+}
